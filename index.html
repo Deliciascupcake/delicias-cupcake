@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Delicias Cupcake - postres, cupcakes, waffles, bebidas y más.">
+  <title>Delicias Cupcake</title>
+  <style>
+    :root{
+      --rosa:#f6b9c8;
+      --rosa2:#e78fa8;
+      --crema:#fff8f2;
+      --cafe:#604438;
+      --oscuro:#382923;
+      --blanco:#fff;
+      --sombra:0 12px 30px rgba(56,41,35,.13);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Arial,Helvetica,sans-serif;background:var(--crema);color:var(--oscuro);line-height:1.6}
+    header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.96);box-shadow:0 2px 16px rgba(0,0,0,.07)}
+    .nav{max-width:1120px;margin:auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--cafe);font-weight:800}
+    .brand img{width:58px;height:58px;border-radius:50%;object-fit:cover;border:2px solid var(--rosa)}
+    nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+    nav a{text-decoration:none;color:var(--oscuro);font-weight:700}
+    nav a:hover{color:var(--rosa2)}
+    .hero{
+      min-height:78vh;display:grid;place-items:center;text-align:center;padding:70px 20px;color:#fff;
+      background:linear-gradient(rgba(45,30,25,.52),rgba(45,30,25,.52)),
+      url('images/pastel-chocolate-frutos-rojos.jpg') center/cover no-repeat;
+    }
+    .hero .inner{max-width:820px}
+    .hero-logo{width:145px;height:145px;border-radius:50%;object-fit:cover;border:5px solid rgba(255,255,255,.9);box-shadow:0 8px 28px rgba(0,0,0,.25);margin-bottom:18px}
+    h1{font-size:clamp(2.8rem,8vw,5.8rem);line-height:1;margin-bottom:16px;text-shadow:0 5px 22px rgba(0,0,0,.3)}
+    .hero p{font-size:clamp(1.05rem,2.5vw,1.35rem);margin-bottom:26px}
+    .btn{display:inline-block;padding:14px 24px;border-radius:999px;text-decoration:none;font-weight:800;margin:6px;transition:.2s}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--rosa2);color:#fff}
+    .btn-light{background:#fff;color:var(--cafe)}
+    section{padding:74px 20px}
+    .container{max-width:1120px;margin:auto}
+    .title{text-align:center;margin-bottom:42px}
+    .title h2{font-size:clamp(2rem,5vw,3rem);color:var(--cafe);margin-bottom:8px}
+    .title p{max-width:680px;margin:auto;color:#735e54}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .card{background:#fff;border-radius:22px;overflow:hidden;box-shadow:var(--sombra)}
+    .card img{width:100%;height:250px;object-fit:cover;display:block}
+    .card-body{padding:20px}
+    .card h3{color:var(--cafe);margin-bottom:8px}
+    .about{background:#fff}
+    .about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+    .about img{width:100%;border-radius:26px;box-shadow:var(--sombra)}
+    .about h2{font-size:clamp(2rem,5vw,3rem);color:var(--cafe);margin-bottom:14px}
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .gallery img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:18px;box-shadow:var(--sombra)}
+    .contact{background:linear-gradient(135deg,#f7bdca,#fde2d9)}
+    .contact-box{max-width:760px;margin:auto;background:#fff;border-radius:28px;padding:40px;text-align:center;box-shadow:var(--sombra)}
+    .contact-box h2{color:var(--cafe);font-size:2.2rem;margin-bottom:12px}
+    footer{background:var(--oscuro);color:#fff;text-align:center;padding:28px 20px}
+    .wa{position:fixed;right:20px;bottom:20px;width:62px;height:62px;border-radius:50%;background:#25D366;color:#fff;text-decoration:none;display:grid;place-items:center;font-size:29px;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:1200}
+    @media(max-width:850px){
+      .grid{grid-template-columns:1fr 1fr}
+      .gallery{grid-template-columns:1fr 1fr}
+      .about-wrap{grid-template-columns:1fr}
+    }
+    @media(max-width:650px){
+      .nav{flex-direction:column}
+      nav ul{justify-content:center;gap:12px;font-size:.92rem}
+      .grid{grid-template-columns:1fr}
+      .hero{min-height:72vh}
+      .hero-logo{width:120px;height:120px}
+      .contact-box{padding:28px 20px}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a class="brand" href="#inicio">
+      <img src="images/logo-delicias-cupcake.jpg" alt="Logo Delicias Cupcake">
+      <span>Delicias Cupcake</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#productos">Menú</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="inner">
+    <img class="hero-logo" src="images/logo-delicias-cupcake.jpg" alt="Delicias Cupcake">
+    <h1>Delicias Cupcake</h1>
+    <p>Cafés, bobas, mangonadas, postres y antojitos mexicanos para disfrutar en El Salto, Huimilpan, Querétaro.</p>
+    <a class="btn btn-primary" href="#productos">Ver productos</a>
+    <a class="btn btn-light" href="https://wa.me/524481062333?text=Hola%20Delicias%20Cupcake,%20quiero%20hacer%20un%20pedido" target="_blank">Pedir por WhatsApp</a>
+  </div>
+</section>
+
+<section id="productos">
+  <div class="container">
+    <div class="title">
+      <h2>Nuestras delicias</h2>
+      <p>Una selección de postres y bebidas preparados con presentación especial.</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <img src="images/roles-dulces.jpg" alt="Cafés fríos y calientes">
+        <div class="card-body"><h3>Cafés fríos y calientes</h3><p>Opciones para disfrutar a tu gusto, frías o calientitas.</p></div>
+      </article>
+      <article class="card">
+        <img src="images/bebidas-frutales.webp" alt="Bobas y bebidas">
+        <div class="card-body"><h3>Bobas</h3><p>Bebidas refrescantes y llenas de sabor.</p></div>
+      </article>
+      <article class="card">
+        <img src="images/bebidas-frutales.webp" alt="Rusas y mangonadas">
+        <div class="card-body"><h3>Rusas y mangonadas</h3><p>Preparadas con sabores frutales y ese toque mexicano que se antoja.</p></div>
+      </article>
+      <article class="card">
+        <img src="images/waffles-fruta.webp" alt="Frutas mixtas">
+        <div class="card-body"><h3>Frutas mixtas</h3><p>Fruta variada para un antojo fresco y delicioso.</p></div>
+      </article>
+      <article class="card">
+        <img src="images/cheesecakes-fruta.jpg" alt="Postres y fresas con crema">
+        <div class="card-body"><h3>Postres y fresas con crema</h3><p>Delicias dulces preparadas para consentirte.</p></div>
+      </article>
+      <article class="card">
+        <img src="images/postres-fresa.jpg" alt="Sevichurros y antojitos mexicanos">
+        <div class="card-body"><h3>Sevichurros y antojitos mexicanos</h3><p>Muchos antojitos con sabores que te van a encantar.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="nosotros">
+  <div class="container about-wrap">
+    <img src="images/postres-fresa.jpg" alt="Postres de Delicias Cupcake">
+    <div>
+      <h2>Sobre Delicias Cupcake</h2>
+      <p>En Delicias Cupcake encontrarás cafés fríos y calientes, bobas, rusas, mangonadas, frutas mixtas, sevichurros, postres, fresas con crema y muchos antojitos mexicanos.</p>
+      <br>
+      <p>Visítanos en El Salto, Huimilpan, Querétaro, o escríbenos por WhatsApp para consultar nuestros productos y hacer tu pedido.</p>
+    </div>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="container">
+    <div class="title"><h2>Galería</h2><p>Algunos de nuestros productos reales.</p></div>
+    <div class="gallery">
+      <img src="images/pastel-chocolate-frutos-rojos.jpg" alt="Pastel de chocolate">
+      <img src="images/cheesecakes-fruta.jpg" alt="Cheesecakes de fruta">
+      <img src="images/postres-fresa.jpg" alt="Postres con fresa">
+      <img src="images/roles-dulces.jpg" alt="Roles dulces">
+      <img src="images/waffles-fruta.webp" alt="Waffles con fruta">
+      <img src="images/panques-naranja.jpg" alt="Panqués de naranja">
+      <img src="images/bebidas-frutales.webp" alt="Bebidas frutales">
+      <img src="images/logo-delicias-cupcake.jpg" alt="Logo Delicias Cupcake">
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="container">
+    <div class="contact-box">
+      <h2>Haz tu pedido</h2>
+      <p><strong>📍 El Salto, Huimilpan, Querétaro</strong></p>
+      <p>🕐 Lunes a jueves: 9:00 a. m. – 5:00 p. m.</p>
+      <p>🕐 Viernes a domingo: 9:00 a. m. – 8:00 p. m.</p>
+      <p style="margin-top:14px">Escríbenos por WhatsApp para conocer disponibilidad y hacer tu pedido.</p>
+      <br>
+      <a class="btn btn-primary" href="https://wa.me/524481062333?text=Hola%20Delicias%20Cupcake,%20quiero%20informaci%C3%B3n%20para%20hacer%20un%20pedido" target="_blank">Enviar mensaje por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer><p>© 2026 Delicias Cupcake · Hecho con cariño 🧁</p></footer>
+<a class="wa" href="https://wa.me/524481062333?text=Hola%20Delicias%20Cupcake,%20quiero%20hacer%20un%20pedido" target="_blank" aria-label="WhatsApp">✆</a>
+</body>
+</html>
